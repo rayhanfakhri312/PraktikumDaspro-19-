@@ -24,6 +24,25 @@ public class StudiKasus219 {
         }else{
             status = "pendanaan tidak diberikan karena tidak mendapatkan juara di kegiatan tersebut";
         }
+    }else if(jenisKegiatan.equalsIgnoreCase("pkm")){
+        System.out.print("Status Pendanaan PKM (1=LOLOS,2=TIDAK LOLOS) : ");
+        statusPendannaanPKM = sc.nextInt();
+        if(statusPendannaanPKM == 1){
+           if(jumlahDokumen == 4){
+            status = "Pendanaan diberikan, karena dokumen lengkap";
+           }else{
+            status = "Pendanaan tidak diberikan karena dokumen kurang : " +(4-jumlahDokumen);
+           }
+        }else{
+            status = "Pendanaan tidak diberikan, karena belum lolos pendanaan PKM";
+        }
+    }else{
+        status = "Tidak termasuk kegiatan yang mendapatkan pendanaan";
     }
+
+    System.out.println("Nama Mahasiswa : "+ namaMahasiswa);
+    System.out.println("status         : "+ status);
+
+    sc.close();
     }
 }
